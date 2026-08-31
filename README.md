@@ -9,6 +9,8 @@ signals a recommendation feed actually learns from — watch time above all. So
 Reseed does what a person would do, on a timer: it searches each tag, opens what
 comes back, and dwells on it long enough to count.
 
+![Reseed on Windows, YouTube tab: tag chips, session sliders, the signal list, and the Chrome hand-off panel](docs/desktop-youtube.png)
+
 ## Two sessions, on purpose
 
 Instagram runs in a pane inside the app. YouTube does not, and that is
@@ -33,6 +35,10 @@ the window you sign into never has one. By the time the driven window opens, the
 session cookie is already on disk. Chrome allows one window per profile, so
 Reseed asks you to close the sign-in window before a run rather than killing it
 and risking an unflushed cookie jar.
+
+Instagram needs none of that, so it runs in the pane and you watch it work:
+
+![Reseed on Windows, Instagram tab: the same controls with Instagram loaded in the embedded pane](docs/desktop-instagram.png)
 
 ```
 build/Reseed-1.0.0-Setup.exe       Windows installer

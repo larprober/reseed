@@ -220,6 +220,23 @@ function refresh() {
   $('pruneSub').hidden = !meta.canPrune || !$('optPrune').checked;
   $('scrubBlock').querySelector('.hint').textContent = meta.scrubNote;
 
+  // Paint every switch straight from its checkbox. A control that takes real
+  // actions on someone's feed must not be able to show "off" while armed, and
+  // a purely CSS-driven state proved it could.
+  document.querySelectorAll('.sig').forEach((row) => {
+    const box = row.querySelector('input[type="checkbox"]');
+    if (!box) return;
+    const on = box.checked;
+    row.classList.toggle('is-on', on);
+    const state = row.querySelector('.state-on, .state-off');
+    if (state) {
+      state.className = on ? 'pill state-on' : 'pill state-off';
+      state.textContent = on ? 'on' : 'off';
+    }
+    const icon = row.querySelector('.ico');
+    if (icon) icon.style.color = on ? 'var(--accent)' : '';
+  });
+
   $('runBtn').disabled = state.running || cfg.tags.length === 0;
   save();
 }
@@ -297,6 +314,12 @@ function setPlatform(platform) {
   // The toolbar drives the embedded pane. Chrome has its own controls, and the
   // window is right there, so these would only be a worse copy of them.
   for (const id of ['navBack', 'navReload', 'navHome']) $(id).disabled = chromeMode;
+
+  if (!state.running) {
+    $('statusText').textContent = chromeMode
+      ? 'Sign in to Chrome on the right, add a few tags, then run.'
+      : 'Sign in inside the pane, add a few tags, then run.';
+  }
 
   updateUrlbar();
   renderChips();

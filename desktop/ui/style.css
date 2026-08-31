@@ -304,7 +304,13 @@ input[type="range"]::-webkit-slider-thumb {
 .sig:hover:not(.is-locked) { border-color: var(--line); background: var(--surface-2); }
 .sig.is-locked { cursor: default; opacity: 0.86; }
 .sig > .ico { color: var(--text-faint); }
-.sig:has(input:checked) > .ico { color: var(--accent); }
+
+/* The on-state is driven by a class that refresh() sets, not by :checked.
+   A checkbox set from script reported :checked and matched the sibling
+   selector, yet one row still painted in the off colour — and a switch that
+   lies about whether it is armed is not acceptable on a control that takes
+   real actions on someone's feed. */
+.sig.is-on > .ico { color: var(--accent); }
 
 .sig-text { flex: 1; display: flex; flex-direction: column; min-width: 0; }
 .sig-text b { font-size: 12.5px; font-weight: 550; }
@@ -312,28 +318,20 @@ input[type="range"]::-webkit-slider-thumb {
 
 .sig input[type="checkbox"] { position: absolute; opacity: 0; pointer-events: none; }
 
-.switch {
-  position: relative;
+/* The signal rows show their state as a word, not just a colour. An earlier
+   sliding switch could report the wrong position while the checkbox underneath
+   was armed, and a control that takes real actions on someone's feed must never
+   be ambiguous about whether it is on. */
+.state-on,
+.state-off {
   flex: none;
-  width: 32px;
-  height: 18px;
-  border-radius: 999px;
-  background: #2b3549;
-  transition: background 0.16s;
+  min-width: 34px;
+  text-align: center;
 }
-.switch::after {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--text-faint);
-  transition: transform 0.16s, background 0.16s;
+.state-off {
+  background: rgba(150, 160, 180, 0.1);
+  color: var(--text-faint);
 }
-input:checked + .switch { background: var(--accent-deep); }
-input:checked + .switch::after { transform: translateX(14px); background: var(--accent); }
 
 .pill {
   flex: none;

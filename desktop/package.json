@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder --win nsis portable"
+    "dist": "electron-builder --win nsis portable && node verify-package.js"
   },
   "devDependencies": {
     "electron": "33.4.11",
@@ -23,8 +23,8 @@
       "buildResources": "build"
     },
     "files": [
-      "main.js",
-      "preload.js",
+      "*.js",
+      "!verify-package.js",
       "ui/**/*",
       "build/icon.ico"
     ],

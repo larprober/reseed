@@ -35,7 +35,11 @@ function createWindow() {
     minWidth: 1080,
     minHeight: 700,
     backgroundColor: '#0E1116',
-    show: false,
+    // Shown immediately, not on ready-to-show. That event proved unreliable
+    // here — it never fired, leaving a window that existed but was never
+    // visible — and with backgroundColor already set to the app's own ink
+    // there is no white flash for a deferred show to hide.
+    show: true,
     autoHideMenuBar: true,
     titleBarStyle: 'hidden',
     titleBarOverlay: { color: '#0E1116', symbolColor: '#8B95AB', height: 44 },
@@ -49,7 +53,6 @@ function createWindow() {
   });
 
   win.loadFile(path.join(__dirname, 'ui', 'index.html'));
-  win.once('ready-to-show', () => win.show());
 }
 
 app.whenReady().then(() => {

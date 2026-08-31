@@ -1,0 +1,62 @@
+{
+  "name": "reseed",
+  "productName": "Reseed",
+  "version": "1.0.0",
+  "description": "Retrain your YouTube and Instagram recommendations from a list of hashtags.",
+  "main": "main.js",
+  "author": "larprober",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis portable"
+  },
+  "devDependencies": {
+    "electron": "33.4.11",
+    "electron-builder": "25.1.8"
+  },
+  "build": {
+    "appId": "dev.larprober.reseed",
+    "productName": "Reseed",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "ui/**/*",
+      "build/icon.ico"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "shortcutName": "Reseed"
+    },
+    "portable": {
+      "artifactName": "Reseed-${version}-portable.exe"
+    },
+    "compression": "normal"
+  },
+  "dependencies": {
+    "ws": "^8.21.3"
+  }
+}

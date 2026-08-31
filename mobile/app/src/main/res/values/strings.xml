@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Reseed</string>
+
+    <string name="tagline">feed retraining</string>
+    <string name="platform_youtube">YouTube</string>
+    <string name="platform_instagram">Instagram</string>
+
+    <string name="tags_title">Tags to grow</string>
+    <string name="tags_hint_youtube">Each tag becomes a YouTube search here. What it finds goes to Chrome.</string>
+    <string name="tags_hint_instagram">Each tag opens its hashtag page, then dwells on posts from it.</string>
+    <string name="tag_input_hint">type a tag, press enter</string>
+
+    <string name="shape_title">Session shape</string>
+    <string name="dwell_label">Dwell per item</string>
+    <string name="per_tag_label">Items per tag</string>
+    <string name="rounds_label">Rounds</string>
+
+    <string name="signals_title">Signals to send</string>
+    <string name="signal_watch">Watch time</string>
+    <string name="signal_watch_note">The signal that actually moves the feed</string>
+    <string name="signal_always">always</string>
+    <string name="signal_search">Search each tag</string>
+    <string name="signal_search_note">Writes to search history first</string>
+    <string name="signal_like">Like what it opens</string>
+    <string name="signal_follow_youtube">Subscribe to channels</string>
+    <string name="signal_follow_instagram">Follow the accounts</string>
+    <string name="signal_follow_note">Strongest, and the most visible</string>
+
+    <string name="history_title">The old history</string>
+    <string name="history_open">Open history controls</string>
+    <string name="history_note_youtube">New tags grow much faster once the old watch history stops voting. This opens the page. The clearing is yours to click.</string>
+    <string name="history_note_instagram">Instagram has no watch-history switch. What it does expose is the list of things you have liked, and that list is a live input to Explore.</string>
+
+    <string name="run">Reseed my feed</string>
+    <string name="run_handoff">Build the queue</string>
+    <string name="handoff_note">Google will not let an app sign you into YouTube inside its own browser, so this app never holds your YouTube account. It searches your tags here — searching needs no login — then hands the videos to Chrome as one playlist. Chrome is already signed in as you, so the watching counts on your real account.</string>
+    <string name="stop">Stop</string>
+    <string name="idle_status">Sign in below, add a few tags, then run.</string>
+    <string name="idle_status_handoff">Add a few tags, then build the queue.</string>
+
+    <string name="sign_out">Sign out</string>
+    <string name="log_title">Activity</string>
+    <string name="dismiss">Got it</string>
+    <string name="keep_open">Keep Reseed on screen while it runs — Android pauses the page behind other apps.</string>
+</resources>

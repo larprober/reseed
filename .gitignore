@@ -1,0 +1,15 @@
+node_modules/
+/build/
+desktop/dist/
+mobile/.gradle/
+mobile/.kotlin/
+mobile/build/
+mobile/app/build/
+mobile/local.properties
+
+# Signing material never belongs in the repo.
+mobile/keystore.properties
+*.keystore
+*.jks
+
+*.log

@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:;" />
+  <title>Reseed</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<svg class="sprite" aria-hidden="true">
+  <defs>
+    <linearGradient id="markGrad" x1="0.1" y1="0.95" x2="0.95" y2="0.1">
+      <stop offset="0" stop-color="#55697F" />
+      <stop offset="0.45" stop-color="#4E9A9B" />
+      <stop offset="1" stop-color="#7FE3C4" />
+    </linearGradient>
+  </defs>
+
+  <symbol id="i-mark" viewBox="0 0 32 32">
+    <path d="M 16.24 20.79 L 15.87 20.85 L 15.50 20.87 L 15.12 20.86 L 14.74 20.82 L 14.35 20.75 L 13.98 20.64 L 13.60 20.49 L 13.24 20.32 L 12.90 20.11 L 12.56 19.87 L 12.25 19.60 L 11.96 19.30 L 11.69 18.97 L 11.45 18.62 L 11.24 18.24 L 11.05 17.85 L 10.91 17.43 L 10.79 17.00 L 10.72 16.56 L 10.68 16.11 L 10.68 15.65 L 10.72 15.19 L 10.80 14.73 L 10.92 14.28 L 11.08 13.83 L 11.28 13.40 L 11.52 12.98 L 11.79 12.58 L 12.11 12.20 L 12.45 11.84 L 12.83 11.51 L 13.24 11.22 L 13.68 10.96 L 14.14 10.73 L 14.62 10.55 L 15.12 10.40 L 15.63 10.30 L 16.16 10.24 L 16.70 10.22 L 17.23 10.25 L 17.77 10.33 L 18.30 10.46 L 18.83 10.63 L 19.34 10.85 L 19.83 11.11 L 20.31 11.41 L 20.76 11.76 L 21.18 12.15 L 21.57 12.57 L 21.92 13.03 L 22.24 13.53 L 22.52 14.05 L 22.75 14.59 L 22.93 15.16 L 23.07 15.75 L 23.16 16.35 L 23.19 16.96 L 23.18 17.58 L 23.11 18.19 L 22.98 18.80 L 22.81 19.41 L 22.58 20.00 L 22.30 20.57 L 21.97 21.12 L 21.60 21.64 L 21.17 22.14 L 20.70 22.59 L 20.20 23.01 L 19.65 23.39 L 19.07 23.72 L 18.46 24.00 L 17.83 24.23 L 17.17 24.41 L 16.50 24.53 L 15.82 24.60 L 15.12 24.60 L 14.43 24.55 L 13.74 24.44 L 13.05 24.26 L 12.38 24.03 L 11.73 23.74 L 11.10 23.39 L 10.50 22.99 L 9.93 22.54 L 9.40 22.04 L 8.91 21.49 L 8.47 20.89 L 8.08 20.26 L 7.74 19.60 L 7.46 18.90 L 7.23 18.17 L 7.07 17.43 L 6.97 16.67 L 6.94 15.90 L 6.97 15.13 L 7.06 14.36 L 7.23 13.59 L 7.46 12.84 L 7.75 12.11 L 8.11 11.40 L 8.53 10.71 L 9.01 10.07 L 9.54 9.46 L 10.13 8.90 L 10.76 8.39 L 11.44 7.93 L 12.17 7.53 L 12.92 7.18 L 13.71 6.91 L 14.52 6.70 L 15.35 6.56 L 16.20 6.49 L 17.05 6.49 L 17.90 6.56 L 18.75 6.71 L 19.30 6.85" fill="none" stroke="url(#markGrad)" stroke-width="2.62"
+          stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="22.68" cy="8.51" r="1.86" fill="#7FE3C4" stroke="none" />
+  </symbol>
+
+  <symbol id="i-run" viewBox="0 0 24 24">
+    <path d="M8.6 5.8 18.4 12 8.6 18.2Z" fill="currentColor" stroke="currentColor"
+          stroke-width="1.6" stroke-linejoin="round" />
+  </symbol>
+  <symbol id="i-stop" viewBox="0 0 24 24">
+    <rect x="7.5" y="7.5" width="9" height="9" rx="1.8" fill="currentColor" stroke="none" />
+  </symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24">
+    <path d="M4 11.4V5.6A1.6 1.6 0 0 1 5.6 4h5.8a1.6 1.6 0 0 1 1.13.47l6.9 6.9a1.6 1.6 0 0 1 0 2.26l-5.8 5.8a1.6 1.6 0 0 1-2.26 0l-6.9-6.9A1.6 1.6 0 0 1 4 11.4Z" />
+    <circle cx="8.2" cy="8.2" r="1.35" />
+  </symbol>
+  <symbol id="i-youtube" viewBox="0 0 24 24">
+    <rect x="2.5" y="5" width="19" height="14" rx="4.2" />
+    <path d="M10.4 9.3 15 12l-4.6 2.7Z" fill="currentColor" stroke-linejoin="round" />
+  </symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24">
+    <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="16.9" cy="7.1" r="1.15" fill="currentColor" stroke="none" />
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="8.3" />
+    <path d="M12 7.4V12l3.1 1.9" stroke-linecap="round" />
+  </symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24">
+    <path d="M12 3.4 20.4 7.6 12 11.8 3.6 7.6Z" stroke-linejoin="round" />
+    <path d="M3.6 12.2 12 16.4l8.4-4.2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M3.6 16.6 12 20.8l8.4-4.2" stroke-linecap="round" stroke-linejoin="round" />
+  </symbol>
+  <symbol id="i-search" viewBox="0 0 24 24">
+    <circle cx="10.8" cy="10.8" r="6.3" />
+    <path d="M15.4 15.4 20 20" stroke-linecap="round" />
+  </symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24">
+    <path d="M2.6 12S6.3 6.2 12 6.2 21.4 12 21.4 12 17.7 17.8 12 17.8 2.6 12 2.6 12Z" stroke-linejoin="round" />
+    <circle cx="12" cy="12" r="2.7" />
+  </symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24">
+    <path d="M12 19.6 4.9 12.8a4.4 4.4 0 0 1 6.2-6.2l.9.9.9-.9a4.4 4.4 0 1 1 6.2 6.2Z" stroke-linejoin="round" />
+  </symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24">
+    <path d="M6.4 16.6V11a5.6 5.6 0 0 1 11.2 0v5.6l1.5 2.1H4.9Z" stroke-linejoin="round" />
+    <path d="M10.2 21.2h3.6" stroke-linecap="round" />
+  </symbol>
+  <symbol id="i-block" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="8.3" />
+    <path d="M6.5 17.5 17.5 6.5" stroke-linecap="round" />
+  </symbol>
+  <symbol id="i-sweep" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="8.3" />
+    <path d="M12 7.4V12l3.1 1.9" stroke-linecap="round" />
+    <path d="M5.9 18.1 18.1 5.9" stroke-linecap="round" />
+  </symbol>
+  <symbol id="i-back" viewBox="0 0 24 24">
+    <path d="M14.6 5.4 8 12l6.6 6.6" stroke-linecap="round" stroke-linejoin="round" />
+  </symbol>
+  <symbol id="i-reload" viewBox="0 0 24 24">
+    <path d="M19.4 12a7.4 7.4 0 1 1-2.2-5.3" stroke-linecap="round" />
+    <path d="M19.7 4.4v4.2h-4.2" stroke-linecap="round" stroke-linejoin="round" />
+  </symbol>
+  <symbol id="i-home" viewBox="0 0 24 24">
+    <path d="M4 10.4 12 4l8 6.4V19a1.2 1.2 0 0 1-1.2 1.2H5.2A1.2 1.2 0 0 1 4 19Z" stroke-linejoin="round" />
+    <path d="M9.6 20.2v-6h4.8v6" stroke-linejoin="round" />
+  </symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24">
+    <path d="M12 3.4 19.2 6v6c0 4.2-3 7.2-7.2 8.6C7.8 19.2 4.8 16.2 4.8 12V6Z" stroke-linejoin="round" />
+    <path d="M9.2 12.1 11.3 14.2 15 10.4" stroke-linecap="round" stroke-linejoin="round" />
+  </symbol>
+  <symbol id="i-x" viewBox="0 0 24 24">
+    <path d="M6.6 6.6 17.4 17.4M17.4 6.6 6.6 17.4" stroke-linecap="round" />
+  </symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24">
+    <path d="M12 4.2 21 19.4H3Z" stroke-linejoin="round" />
+    <path d="M12 10v4.1" stroke-linecap="round" />
+    <circle cx="12" cy="16.8" r="0.95" fill="currentColor" stroke="none" />
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24">
+    <path d="M5 12.6 9.8 17.4 19 6.8" stroke-linecap="round" stroke-linejoin="round" />
+  </symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24">
+    <path d="M6.5 9.5 12 15l5.5-5.5" stroke-linecap="round" stroke-linejoin="round" />
+  </symbol>
+</svg>
+
+<header class="titlebar">
+  <div class="brand">
+    <svg class="brand-mark" viewBox="0 0 32 32"><use href="#i-mark" /></svg>
+    <div class="brand-text">
+      <span class="brand-name">Reseed</span>
+      <span class="brand-sub">feed retraining</span>
+    </div>
+  </div>
+  <div class="drag-fill"></div>
+</header>
+
+<div class="body">
+  <aside class="rail">
+
+    <div class="seg" role="tablist" aria-label="Platform">
+      <button class="seg-btn is-on" data-platform="youtube" role="tab" aria-selected="true">
+        <svg class="ico"><use href="#i-youtube" /></svg><span>YouTube</span>
+      </button>
+      <button class="seg-btn" data-platform="instagram" role="tab" aria-selected="false">
+        <svg class="ico"><use href="#i-instagram" /></svg><span>Instagram</span>
+      </button>
+    </div>
+
+    <section class="block">
+      <h2 class="block-title"><svg class="ico"><use href="#i-tag" /></svg>Tags to grow</h2>
+      <div class="chips" id="chips">
+        <input id="tagInput" class="chip-input" type="text" spellcheck="false"
+               placeholder="type a tag, press Enter" aria-label="Add a tag" />
+      </div>
+      <p class="hint">Comma or Enter adds one. Each tag becomes a search, and the things it opens.</p>
+    </section>
+
+    <section class="block">
+      <h2 class="block-title"><svg class="ico"><use href="#i-clock" /></svg>Session shape</h2>
+
+      <label class="range">
+        <span class="range-head"><span>Dwell per item</span><b id="dwellVal">35s</b></span>
+        <input type="range" id="dwell" min="8" max="150" step="1" value="35" />
+      </label>
+      <p class="hint" id="dwellHint"></p>
+
+      <label class="range">
+        <span class="range-head"><span>Items per tag</span><b id="perTagVal">3</b></span>
+        <input type="range" id="perTag" min="1" max="10" step="1" value="3" />
+      </label>
+
+      <label class="range">
+        <span class="range-head"><span>Rounds</span><b id="roundsVal">3</b></span>
+        <input type="range" id="rounds" min="1" max="20" step="1" value="3" />
+      </label>
+
+      <div class="est" id="est"></div>
+    </section>
+
+    <section class="block">
+      <h2 class="block-title"><svg class="ico"><use href="#i-layers" /></svg>Signals to send</h2>
+
+      <div class="sig is-locked">
+        <svg class="ico"><use href="#i-eye" /></svg>
+        <div class="sig-text"><b>Watch time</b><span>The signal that actually moves the feed</span></div>
+        <span class="pill">always</span>
+      </div>
+
+      <label class="sig">
+        <svg class="ico"><use href="#i-search" /></svg>
+        <div class="sig-text"><b>Search each tag</b><span>Writes to search history first</span></div>
+        <input type="checkbox" id="optSearch" checked /><span class="switch"></span>
+      </label>
+
+      <label class="sig">
+        <svg class="ico"><use href="#i-heart" /></svg>
+        <div class="sig-text"><b>Like what it opens</b><span>A public action on someone else's post</span></div>
+        <input type="checkbox" id="optLike" /><span class="switch"></span>
+      </label>
+
+      <label class="sig">
+        <svg class="ico"><use href="#i-bell" /></svg>
+        <div class="sig-text"><b id="followLabel">Subscribe to channels</b><span>Strongest, and the most visible</span></div>
+        <input type="checkbox" id="optFollow" /><span class="switch"></span>
+      </label>
+
+      <label class="sig" id="pruneRow">
+        <svg class="ico"><use href="#i-block" /></svg>
+        <div class="sig-text"><b>Prune the home feed</b><span>Not interested, on cards that match</span></div>
+        <input type="checkbox" id="optPrune" /><span class="switch"></span>
+      </label>
+
+      <div class="sub" id="pruneSub" hidden>
+        <input type="text" id="muteWords" class="text-input" spellcheck="false"
+               placeholder="words to prune, comma separated" />
+        <p class="hint">Left empty it prunes nothing. It never touches a card it cannot match.</p>
+      </div>
+    </section>
+
+    <section class="block" id="scrubBlock">
+      <h2 class="block-title"><svg class="ico"><use href="#i-sweep" /></svg>The old history</h2>
+      <p class="hint">
+        New tags grow much faster once the old watch history stops voting.
+        This opens the page. The clearing is yours to click.
+      </p>
+      <button class="btn btn-ghost" id="scrubBtn">
+        <svg class="ico"><use href="#i-sweep" /></svg>Open history controls
+      </button>
+    </section>
+
+  </aside>
+
+  <main class="stage">
+    <div class="toolbar">
+      <button class="icon-btn" id="navBack" title="Back"><svg class="ico"><use href="#i-back" /></svg></button>
+      <button class="icon-btn" id="navReload" title="Reload"><svg class="ico"><use href="#i-reload" /></svg></button>
+      <button class="icon-btn" id="navHome" title="Home"><svg class="ico"><use href="#i-home" /></svg></button>
+      <div class="urlbar" id="urlbar">loading</div>
+      <button class="btn btn-ghost btn-sm" id="clearBtn">
+        <svg class="ico"><use href="#i-shield" /></svg>Sign out of this pane
+      </button>
+    </div>
+
+    <div class="viewport" id="viewport">
+      <div id="chromeStage" class="chrome-stage is-on">
+        <div class="chrome-card">
+          <div class="chrome-mark">
+            <svg class="ico ico-lg"><use href="#i-youtube" /></svg>
+          </div>
+          <h3>YouTube runs in your own Chrome</h3>
+          <p>
+            Google blocks sign-in from embedded browsers, and that check is what stops an app
+            from wrapping a Google login and reading the password. Reseed does not try to beat
+            it. It drives the Chrome you already have, in a profile of its own — separate from
+            your everyday one, and signed in only here.
+          </p>
+          <div class="chrome-state" id="chromeState">
+            <span class="dot"></span><span id="chromeStateText">Checking for Chrome…</span>
+          </div>
+          <button class="btn btn-primary" id="chromeLaunch">
+            <svg class="ico"><use href="#i-run" /></svg><span>Open the Chrome session</span>
+          </button>
+          <p class="hint" id="chromeHint">
+            Sign into YouTube in the window that opens. Leave it open while a run is going.
+          </p>
+        </div>
+      </div>
+
+      <webview id="wv-instagram" class="wv" partition="persist:reseed-instagram"
+               src="https://www.instagram.com/"></webview>
+      <div class="veil" id="veil" hidden>
+        <div class="veil-card">
+          <svg class="ico ico-lg"><use href="#i-alert" /></svg>
+          <p id="veilText"></p>
+          <button class="btn btn-ghost btn-sm" id="veilDismiss">Got it</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="runbar">
+      <button class="btn btn-primary" id="runBtn">
+        <svg class="ico"><use href="#i-run" /></svg><span>Reseed my feed</span>
+      </button>
+      <button class="btn btn-danger" id="stopBtn" hidden>
+        <svg class="ico"><use href="#i-stop" /></svg><span>Stop</span>
+      </button>
+      <div class="progress">
+        <div class="progress-head">
+          <span id="statusText">Sign in inside the pane, add a few tags, then run.</span>
+          <span id="counterText" class="counter"></span>
+        </div>
+        <div class="track"><div class="fill" id="progressFill"></div></div>
+      </div>
+      <button class="icon-btn" id="logToggle" title="Activity log">
+        <svg class="ico"><use href="#i-chevron" /></svg>
+      </button>
+    </div>
+
+    <div class="logpanel" id="logpanel" hidden>
+      <div class="log" id="log"></div>
+    </div>
+  </main>
+</div>
+
+<script src="engine.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
